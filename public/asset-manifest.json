@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b111be11.chunk.css",
-    "main.js": "/static/js/main.00bb9147.chunk.js",
-    "main.js.map": "/static/js/main.00bb9147.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.32ceca82.js",
-    "runtime-main.js.map": "/static/js/runtime-main.32ceca82.js.map",
-    "static/js/2.ccdfb254.chunk.js": "/static/js/2.ccdfb254.chunk.js",
-    "static/js/2.ccdfb254.chunk.js.map": "/static/js/2.ccdfb254.chunk.js.map",
-    "static/js/3.e73448ef.chunk.js": "/static/js/3.e73448ef.chunk.js",
-    "static/js/3.e73448ef.chunk.js.map": "/static/js/3.e73448ef.chunk.js.map",
+    "main.css": "/static/css/main.a4372f65.chunk.css",
+    "main.js": "/static/js/main.0ba10aad.chunk.js",
+    "main.js.map": "/static/js/main.0ba10aad.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c0cd098f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c0cd098f.js.map",
+    "static/js/2.0a9a0b67.chunk.js": "/static/js/2.0a9a0b67.chunk.js",
+    "static/js/2.0a9a0b67.chunk.js.map": "/static/js/2.0a9a0b67.chunk.js.map",
+    "static/js/3.a8a63d90.chunk.js": "/static/js/3.a8a63d90.chunk.js",
+    "static/js/3.a8a63d90.chunk.js.map": "/static/js/3.a8a63d90.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b111be11.chunk.css.map": "/static/css/main.b111be11.chunk.css.map",
-    "static/js/2.ccdfb254.chunk.js.LICENSE.txt": "/static/js/2.ccdfb254.chunk.js.LICENSE.txt",
+    "static/css/main.a4372f65.chunk.css.map": "/static/css/main.a4372f65.chunk.css.map",
+    "static/js/2.0a9a0b67.chunk.js.LICENSE.txt": "/static/js/2.0a9a0b67.chunk.js.LICENSE.txt",
     "static/media/Fieldwork10-GeoRegular.5c7dc75c.otf": "/static/media/Fieldwork10-GeoRegular.5c7dc75c.otf",
     "static/media/begFoto.4af375ea.png": "/static/media/begFoto.4af375ea.png",
     "static/media/begicon.638b887a.jpg": "/static/media/begicon.638b887a.jpg",
@@ -20,9 +20,10 @@
     "static/media/hsf.8c1af8b5.jpg": "/static/media/hsf.8c1af8b5.jpg",
     "static/media/globals.css": "/static/media/jor1.d9ba7526.jpg",
     "static/media/jorAmbiente.d66cc85f.jpg": "/static/media/jorAmbiente.d66cc85f.jpg",
-    "static/media/jorBarrios.b2165c5b.jpg": "/static/media/jorBarrios.b2165c5b.jpg",
+    "static/media/jorAmbiente2.37afb516.jpg": "/static/media/jorAmbiente2.37afb516.jpg",
+    "static/media/jorBarrios.6b35286c.jpg": "/static/media/jorBarrios.6b35286c.jpg",
     "static/media/jorConcejo.3f72e084.jpg": "/static/media/jorConcejo.3f72e084.jpg",
-    "static/media/jorDeportes.b0f48d8f.jpg": "/static/media/jorDeportes.b0f48d8f.jpg",
+    "static/media/jorCovid.643af44a.jpg": "/static/media/jorCovid.643af44a.jpg",
     "static/media/jorGenero.57a364e0.jpg": "/static/media/jorGenero.57a364e0.jpg",
     "static/media/jorLogo.bfdd11d1.png": "/static/media/jorLogo.bfdd11d1.png",
     "static/media/jorP.89bf7fb2.jpeg": "/static/media/jorP.89bf7fb2.jpeg",
@@ -36,9 +37,9 @@
     "static/media/vacSF.40d74198.png": "/static/media/vacSF.40d74198.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.32ceca82.js",
-    "static/js/2.ccdfb254.chunk.js",
-    "static/css/main.b111be11.chunk.css",
-    "static/js/main.00bb9147.chunk.js"
+    "static/js/runtime-main.c0cd098f.js",
+    "static/js/2.0a9a0b67.chunk.js",
+    "static/css/main.a4372f65.chunk.css",
+    "static/js/main.0ba10aad.chunk.js"
   ]
 }
