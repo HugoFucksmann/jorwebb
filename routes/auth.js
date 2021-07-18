@@ -1,21 +1,24 @@
-const { Router } = require("express");
-const { login, renewToken } = require("../controllers/auth");
-const { check } = require("express-validator");
-const { validarCampos } = require("../middlewares/validar-campos");
-const { validarJWT } = require("../middlewares/validar-jwt");
+const { Router } = require('express');
+const { login, verificarToken } = require('../controllers/auth');
+const { crearUsuario } = require('../controllers/usuarios');
+const { check } = require('express-validator');
+const { validarCampos } = require('../middlewares/validar-campos');
+const { validarJWT } = require('../middlewares/validar-jwt');
 
 const router = Router();
 
 router.post(
-  "/",
-  [
-    check("usuario", "El email es obligatorio").isEmail(),
-    check("password", "El password es obligatorio").notEmpty(),
-    validarCampos,
-  ],
-  login
+	'/',
+	/* [
+		check('usuario', 'El usuario es obligatorio che').isEmail(),
+		check('password', 'El password es obligatorio che').notEmpty(),
+		validarCampos,
+	], */
+	login
 );
 
-router.get("/renew", validarJWT, renewToken);
+router.post('/verify', validarJWT, verificarToken);
+
+router.post('/s', crearUsuario);
 
 module.exports = router;

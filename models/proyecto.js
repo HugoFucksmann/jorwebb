@@ -4,7 +4,7 @@ const getFecha = () => {
 	return new Date();
 };
 
-const PrensaSchema = Schema(
+const proyectoSchema = Schema(
 	{
 		type: {
 			type: String,
@@ -17,18 +17,9 @@ const PrensaSchema = Schema(
 		subtitle: {
 			type: String,
 		},
-		txtsub1: {
-			type: String,
-		},
-		txtsub2: {
-			type: String,
-		},
 		text: {
 			type: String,
 			required: true,
-		},
-		txtsub3: {
-			type: String,
 		},
 		img: {
 			type: String,
@@ -37,18 +28,19 @@ const PrensaSchema = Schema(
 		date: {
 			type: Date,
 			default: getFecha(),
+			required: true,
 		},
 		usuarioCarga: {
 			type: String,
 		},
 	},
-	{ collection: 'prensa' }
+	{ collection: 'proyectos' }
 );
-PrensaSchema.ensureIndexes;
+proyectoSchema.ensureIndexes;
 
-PrensaSchema.method('toJSON', function () {
+proyectoSchema.method('toJSON', function () {
 	const { __v, expire, ...Object } = this.toObject();
 
 	return Object;
 });
-module.exports = model('Prensa', PrensaSchema);
+module.exports = model('Proyecto', proyectoSchema);

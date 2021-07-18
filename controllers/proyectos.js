@@ -1,24 +1,25 @@
-const Prensa = require('../models/prensa');
+const Proyecto = require('../models/proyecto');
 const Usuario = require('../models/usuario');
-const getNoticias = async (req, res) => {
-	const noticias = await Prensa.find();
+
+const getProyectos = async (req, res) => {
+	const proyecto = await Proyecto.find();
 	res.json({
 		ok: true,
-		noticias,
+		proyecto,
 	});
 };
 
-const crearNoticia = async (req, res) => {
-	const noticias = new Prensa({
+const crearProyecto = async (req, res) => {
+	const proyecto = new Proyecto({
 		...req.body,
 	});
 
 	try {
-		const noticiaDB = await noticias.save();
+		const proyectoDB = await proyecto.save();
 
 		res.json({
 			ok: true,
-			noticia: noticiaDB,
+			proyecto: proyectoDB,
 		});
 	} catch (error) {
 		console.log(error);
@@ -29,24 +30,24 @@ const crearNoticia = async (req, res) => {
 	}
 };
 
-const actualizarNoticia = async (req, res) => {
-	const noticiaId = req.params.id;
+const actualizarProyecto = async (req, res) => {
+	const proyectoId = req.params.id;
 
 	try {
-		const noticiaDB = await Prensa.findById(noticiaId);
-		if (!noticiaDB) {
+		const proyectoDB = await Proyecto.findById(proyectoId);
+		if (!proyectoDB) {
 			return res.status(404).json({
 				ok: false,
-				msg: 'Noticia no encontrada',
+				msg: 'Proyecyo no encontrada',
 			});
 		}
-		const cambiosNoticia = {
+		const cambiosPRoyecto = {
 			...req.body,
 		};
 
-		const noticiaActualizada = await Prensa.findByIdAndUpdate(
-			noticiaId,
-			cambiosNoticia,
+		const proyectoActualizado = await Proyecto.findByIdAndUpdate(
+			proyectoId,
+			cambiosPRoyecto,
 			{
 				new: true,
 			}
@@ -54,7 +55,7 @@ const actualizarNoticia = async (req, res) => {
 
 		res.json({
 			ok: true,
-			noticiaActualizada,
+			proyecto: proyectoActualizado,
 		});
 	} catch (error) {
 		console.log(error);
@@ -65,11 +66,11 @@ const actualizarNoticia = async (req, res) => {
 	}
 };
 
-const eliminarNoticia = async (req, res = response) => {
+const eliminarProyecto = async (req, res = response) => {
 	const noticiaId = req.params.id;
 
 	try {
-		const noticiasDB = await Prensa.findById(noticiaId);
+		const noticiasDB = await Proyecto.findById(noticiaId);
 
 		if (!noticiasDB) {
 			return res.status(404).json({
@@ -78,7 +79,7 @@ const eliminarNoticia = async (req, res = response) => {
 			});
 		}
 
-		await Prensa.findByIdAndDelete(noticiaId);
+		await Proyecto.findByIdAndDelete(noticiaId);
 
 		res.json({
 			ok: true,
@@ -94,8 +95,8 @@ const eliminarNoticia = async (req, res = response) => {
 };
 
 module.exports = {
-	getNoticias,
-	crearNoticia,
-	actualizarNoticia,
-	eliminarNoticia,
+	getProyectos,
+	crearProyecto,
+	actualizarProyecto,
+	eliminarProyecto,
 };
