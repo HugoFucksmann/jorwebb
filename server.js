@@ -1,18 +1,18 @@
 const express = require('express');
-const dotenv = require('dotenv');
-
-dotenv.config();
+require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
 const { dbConnection } = require('./databaseConfig');
 const app = express();
-app.use(cors());
 dbConnection();
+app.use(cors());
+
 app.use(express.json());
 app.use(express.static('public'));
 
 app.use('/api/prensa', require('./routes/prensa'));
 app.use('/api/login', require('./routes/auth'));
+app.use('/api/upload', require('./routes/uploads'));
 
 app.get('*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'public/index.html'));
