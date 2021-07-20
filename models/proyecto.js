@@ -6,7 +6,7 @@ const getFecha = () => {
 
 const proyectoSchema = Schema(
   {
-    type: {
+    eje: {
       type: String,
       require: true,
     },
@@ -21,7 +21,7 @@ const proyectoSchema = Schema(
       type: String,
       required: true,
     },
-    proyectip: {
+    tipo: {
       type: String,
       require: true,
     },
