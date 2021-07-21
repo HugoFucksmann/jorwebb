@@ -14,6 +14,7 @@ app.use("/api/prensa", require("./routes/prensa"));
 app.use("/api/proyectos", require("./routes/proyectos"));
 app.use("/api/login", require("./routes/auth"));
 app.use("/api/upload", require("./routes/uploads"));
+app.use("/api/sumate", require("./routes/sumate"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"));
