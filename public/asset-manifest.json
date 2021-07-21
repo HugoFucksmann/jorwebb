@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.16e953ef.chunk.css",
-    "main.js": "/static/js/main.ec74a060.chunk.js",
-    "main.js.map": "/static/js/main.ec74a060.chunk.js.map",
+    "main.js": "/static/js/main.a4c746f9.chunk.js",
+    "main.js.map": "/static/js/main.a4c746f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d30e4575.js",
     "runtime-main.js.map": "/static/js/runtime-main.d30e4575.js.map",
     "static/js/2.bd3c1d5f.chunk.js": "/static/js/2.bd3c1d5f.chunk.js",
@@ -31,7 +31,6 @@
     "static/media/jorBeg.b4c75799.jpg": "/static/media/jorBeg.b4c75799.jpg",
     "static/media/jorBilletera.bfa16ae8.jpg": "/static/media/jorBilletera.bfa16ae8.jpg",
     "static/media/jorConcejo.3f72e084.jpg": "/static/media/jorConcejo.3f72e084.jpg",
-    "static/media/jorCovid3.a1818df6.jpg": "/static/media/jorCovid3.a1818df6.jpg",
     "static/media/jorGenero2.64166f56.jpg": "/static/media/jorGenero2.64166f56.jpg",
     "static/media/jorGenero3.3962eaca.jpg": "/static/media/jorGenero3.3962eaca.jpg",
     "static/media/jorLogo.bfdd11d1.png": "/static/media/jorLogo.bfdd11d1.png",
@@ -40,6 +39,8 @@
     "static/media/jorambiente2.93956c21.jpg": "/static/media/jorambiente2.93956c21.jpg",
     "static/media/jorincluir1.44129a1e.jpg": "/static/media/jorincluir1.44129a1e.jpg",
     "static/media/jorincluir2.46bb3e38.jpg": "/static/media/jorincluir2.46bb3e38.jpg",
+    "static/media/jorproduccion.092159f7.jpg": "/static/media/jorproduccion.092159f7.jpg",
+    "static/media/jorproduccion2.6a3e3854.jpg": "/static/media/jorproduccion2.6a3e3854.jpg",
     "static/media/num0800.01eff6e7.png": "/static/media/num0800.01eff6e7.png",
     "static/media/playlogo.5d9a073b.png": "/static/media/playlogo.5d9a073b.png",
     "static/media/portyt.37380791.png": "/static/media/portyt.37380791.png",
@@ -52,6 +53,6 @@
     "static/js/runtime-main.d30e4575.js",
     "static/js/2.bd3c1d5f.chunk.js",
     "static/css/main.16e953ef.chunk.css",
-    "static/js/main.ec74a060.chunk.js"
+    "static/js/main.a4c746f9.chunk.js"
   ]
 }
