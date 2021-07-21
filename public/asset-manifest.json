@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.26d96061.chunk.css",
-    "main.js": "/static/js/main.fb187129.chunk.js",
-    "main.js.map": "/static/js/main.fb187129.chunk.js.map",
+    "main.css": "/static/css/main.16e953ef.chunk.css",
+    "main.js": "/static/js/main.0f05bc2d.chunk.js",
+    "main.js.map": "/static/js/main.0f05bc2d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d30e4575.js",
     "runtime-main.js.map": "/static/js/runtime-main.d30e4575.js.map",
-    "static/js/2.d50beb93.chunk.js": "/static/js/2.d50beb93.chunk.js",
-    "static/js/2.d50beb93.chunk.js.map": "/static/js/2.d50beb93.chunk.js.map",
+    "static/js/2.11b2737f.chunk.js": "/static/js/2.11b2737f.chunk.js",
+    "static/js/2.11b2737f.chunk.js.map": "/static/js/2.11b2737f.chunk.js.map",
     "static/js/3.f0348da9.chunk.js": "/static/js/3.f0348da9.chunk.js",
     "static/js/3.f0348da9.chunk.js.map": "/static/js/3.f0348da9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.26d96061.chunk.css.map": "/static/css/main.26d96061.chunk.css.map",
-    "static/js/2.d50beb93.chunk.js.LICENSE.txt": "/static/js/2.d50beb93.chunk.js.LICENSE.txt",
+    "static/css/main.16e953ef.chunk.css.map": "/static/css/main.16e953ef.chunk.css.map",
+    "static/js/2.11b2737f.chunk.js.LICENSE.txt": "/static/js/2.11b2737f.chunk.js.LICENSE.txt",
     "static/media/begBanner.e7b26a94.jpeg": "/static/media/begBanner.e7b26a94.jpeg",
     "static/media/begFoto.4af375ea.png": "/static/media/begFoto.4af375ea.png",
     "static/media/begicon.638b887a.jpg": "/static/media/begicon.638b887a.jpg",
@@ -24,7 +24,7 @@
     "static/media/hsf.8c1af8b5.jpg": "/static/media/hsf.8c1af8b5.jpg",
     "static/media/incluir3.560bf50e.jpg": "/static/media/incluir3.560bf50e.jpg",
     "static/media/incluir4.4a7659f6.jpg": "/static/media/incluir4.4a7659f6.jpg",
-    "static/media/globals.css": "/static/media/jor1.028fd7f1.jpg",
+    "static/media/jor1.028fd7f1.jpg": "/static/media/jor1.028fd7f1.jpg",
     "static/media/jorAmbiente2.37afb516.jpg": "/static/media/jorAmbiente2.37afb516.jpg",
     "static/media/jorBarrios.6b35286c.jpg": "/static/media/jorBarrios.6b35286c.jpg",
     "static/media/jorBarrios2.2871bcde.jpg": "/static/media/jorBarrios2.2871bcde.jpg",
@@ -50,8 +50,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d30e4575.js",
-    "static/js/2.d50beb93.chunk.js",
-    "static/css/main.26d96061.chunk.css",
-    "static/js/main.fb187129.chunk.js"
+    "static/js/2.11b2737f.chunk.js",
+    "static/css/main.16e953ef.chunk.css",
+    "static/js/main.0f05bc2d.chunk.js"
   ]
 }
