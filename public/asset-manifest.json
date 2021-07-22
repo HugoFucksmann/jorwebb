@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.16e953ef.chunk.css",
-    "main.js": "/static/js/main.5db2fd5e.chunk.js",
-    "main.js.map": "/static/js/main.5db2fd5e.chunk.js.map",
+    "main.js": "/static/js/main.1fac02c1.chunk.js",
+    "main.js.map": "/static/js/main.1fac02c1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d30e4575.js",
     "runtime-main.js.map": "/static/js/runtime-main.d30e4575.js.map",
-    "static/js/2.c547a771.chunk.js": "/static/js/2.c547a771.chunk.js",
-    "static/js/2.c547a771.chunk.js.map": "/static/js/2.c547a771.chunk.js.map",
+    "static/js/2.f774c240.chunk.js": "/static/js/2.f774c240.chunk.js",
+    "static/js/2.f774c240.chunk.js.map": "/static/js/2.f774c240.chunk.js.map",
     "static/js/3.f0348da9.chunk.js": "/static/js/3.f0348da9.chunk.js",
     "static/js/3.f0348da9.chunk.js.map": "/static/js/3.f0348da9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.16e953ef.chunk.css.map": "/static/css/main.16e953ef.chunk.css.map",
-    "static/js/2.c547a771.chunk.js.LICENSE.txt": "/static/js/2.c547a771.chunk.js.LICENSE.txt",
+    "static/js/2.f774c240.chunk.js.LICENSE.txt": "/static/js/2.f774c240.chunk.js.LICENSE.txt",
     "static/media/begBanner.e7b26a94.jpeg": "/static/media/begBanner.e7b26a94.jpeg",
-    "static/media/begFoto.4af375ea.png": "/static/media/begFoto.4af375ea.png",
+    "static/media/begFoto.c3eb233e.png": "/static/media/begFoto.c3eb233e.png",
     "static/media/begicon.638b887a.jpg": "/static/media/begicon.638b887a.jpg",
     "static/media/bille.20cd5f82.png": "/static/media/bille.20cd5f82.png",
     "static/media/buscanlogo.d9e413bf.png": "/static/media/buscanlogo.d9e413bf.png",
@@ -29,13 +29,12 @@
     "static/media/jorBarrios.6b35286c.jpg": "/static/media/jorBarrios.6b35286c.jpg",
     "static/media/jorBarrios2.2871bcde.jpg": "/static/media/jorBarrios2.2871bcde.jpg",
     "static/media/jorBeg.b4c75799.jpg": "/static/media/jorBeg.b4c75799.jpg",
-    "static/media/jorBilletera.bfa16ae8.jpg": "/static/media/jorBilletera.bfa16ae8.jpg",
+    "static/media/jorBilletera.135a6625.jpg": "/static/media/jorBilletera.135a6625.jpg",
     "static/media/jorConcejo.3f72e084.jpg": "/static/media/jorConcejo.3f72e084.jpg",
+    "static/media/jorCovid.bb044b5f.png": "/static/media/jorCovid.bb044b5f.png",
     "static/media/jorGenero2.64166f56.jpg": "/static/media/jorGenero2.64166f56.jpg",
     "static/media/jorGenero3.3962eaca.jpg": "/static/media/jorGenero3.3962eaca.jpg",
     "static/media/jorLogo.bfdd11d1.png": "/static/media/jorLogo.bfdd11d1.png",
-    "static/media/jorVacunas1.2bcaf95d.jpg": "/static/media/jorVacunas1.2bcaf95d.jpg",
-    "static/media/jorVacunas2.1c9ba673.jpg": "/static/media/jorVacunas2.1c9ba673.jpg",
     "static/media/jorambiente2.93956c21.jpg": "/static/media/jorambiente2.93956c21.jpg",
     "static/media/jorincluir1.44129a1e.jpg": "/static/media/jorincluir1.44129a1e.jpg",
     "static/media/jorincluir2.46bb3e38.jpg": "/static/media/jorincluir2.46bb3e38.jpg",
@@ -43,16 +42,17 @@
     "static/media/jorproduccion2.6a3e3854.jpg": "/static/media/jorproduccion2.6a3e3854.jpg",
     "static/media/num0800.01eff6e7.png": "/static/media/num0800.01eff6e7.png",
     "static/media/playlogo.5d9a073b.png": "/static/media/playlogo.5d9a073b.png",
-    "static/media/portyt.37380791.png": "/static/media/portyt.37380791.png",
+    "static/media/portyt.a3132948.png": "/static/media/portyt.a3132948.png",
     "static/media/pregFrec.6bd5a7cc.png": "/static/media/pregFrec.6bd5a7cc.png",
     "static/media/ruta11.c1bf9c5c.png": "/static/media/ruta11.c1bf9c5c.png",
     "static/media/sustentable.ac0cbe9a.jpg": "/static/media/sustentable.ac0cbe9a.jpg",
-    "static/media/vacSF.40d74198.png": "/static/media/vacSF.40d74198.png"
+    "static/media/vacSF.922c4fed.png": "/static/media/vacSF.922c4fed.png",
+    "static/media/vacf1.ac76c7a8.jpg": "/static/media/vacf1.ac76c7a8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d30e4575.js",
-    "static/js/2.c547a771.chunk.js",
+    "static/js/2.f774c240.chunk.js",
     "static/css/main.16e953ef.chunk.css",
-    "static/js/main.5db2fd5e.chunk.js"
+    "static/js/main.1fac02c1.chunk.js"
   ]
 }
