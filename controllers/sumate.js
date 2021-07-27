@@ -9,12 +9,10 @@ const getSumate = async (req, res) => {
 };
 
 const crearSumate = async (req, res) => {
-	console.log('crear sumate');
-
+	const sumate = new Sumate({
+		...req.body,
+	});
 	try {
-		const sumate = new Sumate({
-			...req.body,
-		});
 		const sumateDB = await sumate.save();
 
 		res.json({

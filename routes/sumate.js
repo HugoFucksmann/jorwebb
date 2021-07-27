@@ -3,19 +3,12 @@ const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 
-const {
-	getSumate,
-	crearSumate,
-	eliminarSumate,
-	actualizarSumate,
-} = require('../controllers/prensa');
+const { crearSumate, getSumate } = require('../controllers/sumate');
 
 const router = Router();
 
-//router.get('/', validarJWT, getSumate);
-router.post('/', function (req, res) {
-	crearSumate;
-});
+router.get('/', validarJWT, getSumate);
+router.post('/', crearSumate);
 //router.delete('/:id', validarJWT, eliminarSumate);
 //router.patch('/:id', validarJWT, actualizarSumate);
 
