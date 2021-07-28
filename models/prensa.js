@@ -38,6 +38,10 @@ const PrensaSchema = Schema(
 			type: Date,
 			default: getFecha(),
 		},
+		color: {
+			type: String,
+			required: true,
+		},
 		usuarioCarga: {
 			type: String,
 		},
