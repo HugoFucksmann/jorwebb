@@ -15,12 +15,12 @@ const crearSumate = async (req, res) => {
   try {
     const verify = await verifyRecaptcha(token);
 
-    /*  if (!verify.success)
+    if (!verify)
       return res.status(500).json({
         ok: false,
         msj: "ocurrio un error al verificar token :(",
         verify: verify,
-      }); */
+      });
 
     const sumate = new Sumate({
       ...req.body.sumate,
@@ -102,14 +102,20 @@ const eliminarSumate = async (req, res) => {
 };
 
 const verifyRecaptcha = async (token) => {
-  const isHuman = await fetch(`https://recaptcha.google.com/recaptcha/api/siteverify`, {
+  // Validate Human
+  const isHuman = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
     method: "post",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
     },
-    body: `secret=${RECAPTCHA_SERVER_KEY}&response=${token}`,
-  }).then((res) => res.json());
+    body: `secret=${RECAPTCHAKEY}&response=${token}`,
+  })
+    .then((res) => res.json())
+    .then((json) => json.success)
+    .catch((err) => {
+      throw new Error(`Error in Google Siteverify API. ${err.message}`);
+    });
 
   return isHuman;
 };
