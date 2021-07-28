@@ -15,7 +15,7 @@ const crearSumate = async (req, res) => {
   try {
     const verify = await verifyRecaptcha(token);
 
-    if (!verify)
+    if (!verify.success)
       return res.status(500).json({
         ok: false,
         msj: "ocurrio un error al verificar token :(",
@@ -103,23 +103,14 @@ const eliminarSumate = async (req, res) => {
 };
 
 const verifyRecaptcha = async (token) => {
-  const isHuman = await fetch(
-    `https://recaptcha.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHAKEY}&response=${token}`,
-    {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
-      },
-    }
-  ).then((res) => res.json());
+  const isHuman = await fetch(`https://recaptcha.google.com/recaptcha/api/siteverify`, {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+    },
+    body: `secret=${RECAPTCHA_SERVER_KEY}&response=${token}`,
+  }).then((res) => res.json());
 
   return isHuman;
-};
-
-module.exports = {
-  getSumate,
-  crearSumate,
-  actualizarSumate,
-  eliminarSumate,
 };
