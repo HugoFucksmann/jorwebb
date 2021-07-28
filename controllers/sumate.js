@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 const Sumate = require("../models/sumate");
 
 const getSumate = async (req, res) => {
@@ -11,10 +12,20 @@ const getSumate = async (req, res) => {
 const crearSumate = async (req, res) => {
   const token = req.body.token;
 
-  const sumate = new Sumate({
-    ...req.body.sumate,
-  });
   try {
+    const verify = await verifyRecaptcha(token);
+
+    if (!verify)
+      return res.status(500).json({
+        ok: false,
+        msj: "ocurrio un error al verificar token :(",
+        verify: verify,
+      });
+
+    const sumate = new Sumate({
+      ...req.body.sumate,
+    });
+
     const sumateDB = await sumate.save();
 
     res.json({
@@ -89,6 +100,21 @@ const eliminarSumate = async (req, res) => {
       msg: "Error hable con el admin",
     });
   }
+};
+
+const verifyRecaptcha = async (token) => {
+  const isHuman = await fetch(
+    `https://recaptcha.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHAKEY}&response=${token}`,
+    {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+      },
+    }
+  ).then((res) => res.json());
+
+  return isHuman;
 };
 
 module.exports = {
