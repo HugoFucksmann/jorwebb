@@ -31,7 +31,7 @@ const crearSumate = async (req, res) => {
     res.json({
       ok: true,
       sumate: sumateDB,
-      token,
+      verify,
     });
   } catch (error) {
     console.log(error);
