@@ -9,7 +9,5 @@ const router = Router();
 
 router.get("/", validarJWT, getSumate);
 router.post("/", crearSumate);
-//router.delete('/:id', validarJWT, eliminarSumate);
-//router.patch('/:id', validarJWT, actualizarSumate);
 
 module.exports = router;

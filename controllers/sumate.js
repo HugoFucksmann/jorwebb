@@ -15,12 +15,12 @@ const crearSumate = async (req, res) => {
   try {
     const verify = await verifyRecaptcha(token);
 
-    if (!verify.success)
+    /*  if (!verify.success)
       return res.status(500).json({
         ok: false,
         msj: "ocurrio un error al verificar token :(",
         verify: verify,
-      });
+      }); */
 
     const sumate = new Sumate({
       ...req.body.sumate,
@@ -31,7 +31,6 @@ const crearSumate = async (req, res) => {
     res.json({
       ok: true,
       sumate: sumateDB,
-      verify,
     });
   } catch (error) {
     console.log(error);
@@ -113,4 +112,9 @@ const verifyRecaptcha = async (token) => {
   }).then((res) => res.json());
 
   return isHuman;
+};
+
+module.exports = {
+  crearSumate,
+  getSumate,
 };
