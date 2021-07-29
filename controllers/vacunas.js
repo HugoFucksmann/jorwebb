@@ -27,7 +27,7 @@ const getVacunasDepartamento = async (req, res) => {
 			}
 		)
 			.then((res) => res.json())
-			.then(({ data }) => data.rows);
+			.then(({ data }) => data);
 
 		res.json({
 			ok: true,
