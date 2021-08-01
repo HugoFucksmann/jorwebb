@@ -73,10 +73,10 @@ const getVacunasUltimoDia = async (req, res) => {
 		.then(({ data }) => data.rows)
 		.catch((e) => {console.log(e);return []})
 
-
-		const ultimodia = [{fecha: vacunas[0][0]}, {totaldia: vacunas[2][2]}]
-
-		
+		const ultimodia = {
+			fecha: vacunas[0][0], 
+			totaldia: vacunas[2][2]
+		}
 
 		res.json({
 			ok: true,
@@ -121,13 +121,21 @@ const getVacunasTotal = async (req, res) => {
 		.then(({ data }) => data.rows)
 		.catch((e) => {console.log(e);return []})
 	
-		const totales = [{totalAbsoluto: vacunas[11][3] }, {total1dosis: vacunas[6][3] }, {total2dosis: vacunas[7][3] },{ASTRAZENECA: vacunas[8][3] },{SINOPHARM: vacunas[9][3] },{SPUTNIK: vacunas[10][3] },]
+		const totales = {
+			totalAbsoluto: vacunas[11][3],
+			total1dosis: vacunas[6][3],
+			total2dosis: vacunas[7][3],
+			ASTRAZENECA: vacunas[8][3],
+			SINOPHARM: vacunas[9][3],
+			SPUTNIK: vacunas[10][3]
 		
+		}
 
 		res.json({
 			ok: true,
 			totales: totales,
 		});
+
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({
