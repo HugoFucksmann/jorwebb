@@ -1,11 +1,21 @@
 const Prensa = require('../models/prensa');
 const Usuario = require('../models/usuario');
 const getNoticias = async (req, res) => {
-	const noticias = await Prensa.find();
-	res.json({
-		ok: true,
-		noticias,
-	});
+
+	try {
+		const noticias = await Prensa.find();
+		res.json({
+			ok: true,
+			noticias,
+		});
+	} catch (error) {
+		console.log(error);
+		res.status(500).json({
+			ok: false,
+			msj: 'error'
+		})
+	}
+
 };
 
 const crearNoticia = async (req, res) => {
