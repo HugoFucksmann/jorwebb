@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.378500a0.chunk.css",
     "main.js": "/static/js/main.84f43bba.chunk.js",
     "main.js.map": "/static/js/main.84f43bba.chunk.js.map",
@@ -12,6 +13,20 @@
     "index.html": "/index.html",
     "static/css/main.378500a0.chunk.css.map": "/static/css/main.378500a0.chunk.css.map",
     "static/js/2.492dd67a.chunk.js.LICENSE.txt": "/static/js/2.492dd67a.chunk.js.LICENSE.txt",
+=======
+    "main.css": "/static/css/main.419c78f9.chunk.css",
+    "main.js": "/static/js/main.d93d0bc9.chunk.js",
+    "main.js.map": "/static/js/main.d93d0bc9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8a697a96.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8a697a96.js.map",
+    "static/js/2.dabf71df.chunk.js": "/static/js/2.dabf71df.chunk.js",
+    "static/js/2.dabf71df.chunk.js.map": "/static/js/2.dabf71df.chunk.js.map",
+    "static/js/3.74cad88f.chunk.js": "/static/js/3.74cad88f.chunk.js",
+    "static/js/3.74cad88f.chunk.js.map": "/static/js/3.74cad88f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.419c78f9.chunk.css.map": "/static/css/main.419c78f9.chunk.css.map",
+    "static/js/2.dabf71df.chunk.js.LICENSE.txt": "/static/js/2.dabf71df.chunk.js.LICENSE.txt",
+>>>>>>> 1dc5e760cc32c34e8e98b7988d1c9057f1fbb762
     "static/media/VIQ_6403.f4d21063.jpg": "/static/media/VIQ_6403.f4d21063.jpg",
     "static/media/begBanner.e7b26a94.jpeg": "/static/media/begBanner.e7b26a94.jpeg",
     "static/media/begFoto.c3eb233e.png": "/static/media/begFoto.c3eb233e.png",
@@ -57,9 +72,16 @@
     "static/media/vacf1.ac76c7a8.jpg": "/static/media/vacf1.ac76c7a8.jpg"
   },
   "entrypoints": [
+<<<<<<< HEAD
     "static/js/runtime-main.9b971d1e.js",
     "static/js/2.492dd67a.chunk.js",
     "static/css/main.378500a0.chunk.css",
     "static/js/main.84f43bba.chunk.js"
+=======
+    "static/js/runtime-main.8a697a96.js",
+    "static/js/2.dabf71df.chunk.js",
+    "static/css/main.419c78f9.chunk.css",
+    "static/js/main.d93d0bc9.chunk.js"
+>>>>>>> 1dc5e760cc32c34e8e98b7988d1c9057f1fbb762
   ]
 }
