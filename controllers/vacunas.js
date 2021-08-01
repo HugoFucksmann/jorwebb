@@ -27,7 +27,8 @@ const getVacunasDepartamento = async (req, res) => {
 			}
 		)
 			.then((res) => res.json())
-			.then(({ data }) => data);
+			.then(({ data }) => data)
+			.catch((e) => {console.log(e);return []})
 
 		res.json({
 			ok: true,
@@ -68,12 +69,18 @@ const getVacunasUltimoDia = async (req, res) => {
 				credentials: 'include',
 			}
 		)
-			.then((res) => res.json())
-			.then(({ data }) => data.rows);
+		.then((res) => res.json())
+		.then(({ data }) => data.rows)
+		.catch((e) => {console.log(e);return []})
+
+
+		const ultimodia = [{fecha: vacunas[0][0]}, {totaldia: vacunas[2][2]}]
+
+		
 
 		res.json({
 			ok: true,
-			vacunas: vacunas,
+			vacunas: ultimodia,
 		});
 	} catch (err) {
 		console.log(err);
@@ -110,11 +117,16 @@ const getVacunasTotal = async (req, res) => {
 				credentials: 'include',
 			}
 		)
-			.then((res) => res.json())
-			.then(({ data }) => data.rows);
+		.then((res) => res.json())
+		.then(({ data }) => data.rows)
+		.catch((e) => {console.log(e);return []})
+	
+		const totales = [{totalAbsoluto: vacunas[11][3] }, {total1dosis: vacunas[6][3] }, {total2dosis: vacunas[7][3] },{ASTRAZENECA: vacunas[8][3] },{SINOPHARM: vacunas[9][3] },{SPUTNIK: vacunas[10][3] },]
+		
+
 		res.json({
 			ok: true,
-			vacunas: vacunas,
+			totales: totales,
 		});
 	} catch (err) {
 		console.log(err);
