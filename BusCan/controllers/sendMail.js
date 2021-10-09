@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+/* const nodemailer = require('nodemailer');
 
 exports.sendEmail = function ({ usuario, mascota }) {
 	console.log('datoos ', usuario, ' y ', mascota);
@@ -27,4 +27,4 @@ exports.sendEmail = function ({ usuario, mascota }) {
 			return;
 		}
 	});
-};
+}; */
