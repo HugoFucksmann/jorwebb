@@ -1,6 +1,6 @@
 const aws = require("aws-sdk");
 const { comprimirImg } = require("../../helpers/compresorImg");
-const Prensa = require("../models/prensa");
+const { Prensa } = require("../../database/joraWebConnection");
 const S3_BUCKET = process.env.S3_BUCKET_JOR;
 aws.config.update({ region: "us-east-2" });
 

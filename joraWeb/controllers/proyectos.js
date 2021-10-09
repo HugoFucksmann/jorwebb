@@ -1,4 +1,4 @@
-const Proyecto = require("../models/proyecto");
+const { Proyecto } = require("../../database/joraWebConnection");
 
 const getProyectos = async (req, res) => {
   const proyecto = await Proyecto.find();

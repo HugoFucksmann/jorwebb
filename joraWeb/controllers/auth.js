@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const Usuario = require("../models/usuario");
+const { Usuario } = require("../../database/joraWebConnection");
 const { generarJWT, verificarJWT } = require("../../helpers/jwt");
 
 const login = async (req, res) => {
