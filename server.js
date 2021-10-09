@@ -2,22 +2,19 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 const path = require("path");
-const { dbConnection } = require("./databaseConfig");
-const app = express();
-dbConnection();
-app.use(cors());
+const fileUpload = require("express-fileupload");
 
+const app = express();
+app.use(cors());
 app.use(express.json());
+app.use(fileUpload());
 app.use(express.static("public"));
 
-app.use("/api/prensa", require("./routes/prensa"));
-app.use("/api/proyectos", require("./routes/proyectos"));
-app.use("/api/login", require("./routes/auth"));
-app.use("/api/upload", require("./routes/uploads"));
-app.use("/api/sumate", require("./routes/sumate"));
-app.use("/api/vacunas", require("./routes/vacunas"));
+app.use("/mg", require("./casaGrande/root"));
+app.use("/buscan", require("./BusCan/root"));
+app.use("/jorweb", require("./joraWeb/root"));
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"));
 });
 
