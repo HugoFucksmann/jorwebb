@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const dbConnection = async () => {
   try {
-    await mongoose.connect(process.env.BD_CNN, {
+    await mongoose.connect(process.env.BD_CNN_JORAWEB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       // useCreateIndex: true,
