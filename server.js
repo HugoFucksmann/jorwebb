@@ -10,7 +10,6 @@ app.use(express.json());
 app.use(fileUpload());
 app.use(express.static("public"));
 
-app.use("/mg", require("./casaGrande/root"));
 app.use("/buscan", require("./BusCan/root"));
 app.use("/jorweb", require("./joraWeb/root"));
 
