@@ -304,7 +304,7 @@ const addReport = async (req, res) => {
 		});
 
 		if (valid === false)
-			return res.status(500).json({
+			return res.json({
 				ok: false,
 				msg: 'ya reportaste esta publicacion',
 			});
@@ -319,13 +319,9 @@ const addReport = async (req, res) => {
 			},
 		};
 
-		const mascotaActualizado = await Mascota.findByIdAndUpdate(
-			mid,
-			newM,
-			{
-				new: true,
-			}
-		);
+		await Mascota.findByIdAndUpdate(mid, newM, {
+			new: true,
+		});
 
 		res.json({
 			ok: true,
