@@ -3,6 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 const path = require("path");
 const fileUpload = require("express-fileupload");
+const { default: gg, ggg } = require("./helpers/google-drive");
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,8 @@ app.use("/jorweb", require("./joraWeb/root"));
 app.get("/*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"));
 });
+
+//ggg();
 
 const PORT = process.env.PORT || 3012;
 app.listen(PORT, () => {
