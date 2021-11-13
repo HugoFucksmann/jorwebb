@@ -6,6 +6,7 @@ const {
 	MascotaAdop,
 	Mascota,
 } = require('../../database/busCanConnection');
+const { uploadFile } = require('../../helpers/google-drive');
 const S3_BUCKET = process.env.S3_BUCKET_BUSCAN;
 const IDS3 = process.env.AWS_ACCESS_KEY_ID;
 const SECRET = process.env.AWS_SECRET_ACCESS_KEY;
@@ -138,9 +139,52 @@ const readBucket = (req, res) => {
 	});
 };
 
+const driveUpload = async (req, res) => {
+	console.log('entro en DRIVEEEEE');
+	if (!req.files || Object.keys(req.files).length === 0) {
+		return res.status(400).json({
+			ok: false,
+			msj: 'no hay ningun archivo subido',
+		});
+	}
+
+	const file = req.files.imgMascota;
+	const fileData = await comprimirImg(file.data);
+
+	const nombreCortado = file.name.split('.');
+	const extensionArchivo = nombreCortado[nombreCortado.length - 1];
+	const extensionesValidas = ['png', 'jpg', 'jpeg'];
+	if (!extensionesValidas.includes(extensionArchivo)) {
+		return res.status(400).json({
+			ok: false,
+			msj: 'No es una extension valida, usa .png .jpg o .jpeg',
+		});
+	}
+
+	const fileName = `${req.params.mid + '.' + extensionArchivo}`;
+
+	const result = await uploadFile(
+		fileName,
+		fileData,
+		extensionArchivo
+	);
+
+	if (!result)
+		return res.status(400).json({
+			ok: false,
+			msj: 'error al cargar imagen',
+		});
+
+	res.json({
+		ok: ture,
+		result: result,
+	});
+};
+
 module.exports = {
 	//fileUploads,
 	retornaImagen,
 	readBucket,
 	createBucket,
+	driveUpload,
 };

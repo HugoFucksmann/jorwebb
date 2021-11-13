@@ -1,90 +1,98 @@
-const fs = require("fs");
-const readline = require("readline");
-const { google } = require("googleapis");
+const { google } = require('googleapis');
+const path = require('path');
+const fs = require('fs');
 
-// If modifying these scopes, delete token.json.
-const SCOPES = ["https://www.googleapis.com/auth/drive.file"];
-const TOKEN_PATH = "token.json";
+async function conect() {
+	const auth2Client = new google.auth.OAuth2(
+		process.env.DRIVE_ID_CLIENT,
+		process.env.DRIVE_SECRET_ID,
+		process.env.DRIVE_REDIRECT_URL
+	);
 
-/**
- * Create an OAuth2 client with the given credentials, and then execute the given callback function.
- */
-function authorize(credentials, callback) {
-  const { client_secret, client_id, redirect_uris } = credentials.web;
-  const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
+	auth2Client.setCredentials({
+		refresh_token: process.env.DRIVE_REFRESH_TOKEN,
+	});
 
-  // Check if we have previously stored a token.
-  fs.readFile(TOKEN_PATH, (err, token) => {
-    if (err) return getAccessToken(oAuth2Client, callback);
-    oAuth2Client.setCredentials(JSON.parse(token));
-    callback(oAuth2Client);
-  });
+	const drive = google.drive({
+		version: 'v3',
+		auth: auth2Client,
+	});
+
+	return drive;
 }
 
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback for the authorized client.
- */
-function getAccessToken(oAuth2Client, callback) {
-  const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: "offline",
-    scope: SCOPES,
-  });
-  console.log("Authorize this app by visiting this url:", authUrl);
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  rl.question("Enter the code from that page here: ", (code) => {
-    rl.close();
-    oAuth2Client.getToken(code, (err, token) => {
-      if (err) return console.error("Error retrieving access token", err);
-      oAuth2Client.setCredentials(token);
-      // Store the token to disk for later program executions
-      fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
-        if (err) return console.error(err);
-        console.log("Token stored to", TOKEN_PATH);
-      });
-      callback(oAuth2Client);
-    });
-  });
+/* 
+filepath which needs to be uploaded
+Note: Assumes example.jpg file is in root directory, 
+though this can be any filePath
+*/
+
+async function uploadFile(name, file, extencion) {
+	const drive = await conect();
+	//const filePath = path.join(__dirname, '../files/images.png');
+	try {
+		const response = await drive.files.create({
+			requestBody: {
+				name: name, //This can be name of your choice
+				mimeType: tipo,
+				parents: ['1XhqRrFY4eHZ4uoZqKqooYsEBJX42D6iQ'],
+			},
+			media: {
+				mimeType: tipo,
+				body: fs.createReadStream(file),
+			},
+		});
+
+		console.log(response.data);
+		return response.data;
+	} catch (error) {
+		console.log(error.message);
+		return false;
+	}
 }
-/**
- * Describe with given media and metaData and upload it using google.drive.create method()
- */
-function uploadFile(auth) {
-  const drive = google.drive({ version: "v3", auth });
-  const fileMetadata = {
-    name: "photo.jpg",
-  };
-  const media = {
-    mimeType: "image/png",
-    body: fs.createReadStream("files/images.png"),
-  };
-  drive.files.create(
-    {
-      resource: fileMetadata,
-      media: media,
-      fields: "id",
-    },
-    (err, file) => {
-      if (err) {
-        // Handle error
-        console.error(err);
-      } else {
-        console.log("File Id: ", file.id);
-      }
-    }
-  );
+
+// uploadFile();
+
+async function deleteFile() {
+	try {
+		const response = await drive.files.delete({
+			fileId: 'YOUR FILE ID',
+		});
+		console.log(response.data, response.status);
+	} catch (error) {
+		console.log(error.message);
+	}
 }
-const ggg = async () => {
-  fs.readFile("credentials.json", (err, content) => {
-    if (err) return console.log("Error loading client secret file:", err);
-    // Authorize a client with credentials, then call the Google Drive API.
-    authorize(JSON.parse(content), uploadFile);
-  });
+
+// deleteFile();
+
+async function generatePublicUrl() {
+	try {
+		const fileId = 'YOUR FILE ID';
+		await drive.permissions.create({
+			fileId: fileId,
+			requestBody: {
+				role: 'reader',
+				type: 'anyone',
+			},
+		});
+
+		/* 
+    webViewLink: View the file in browser
+    webContentLink: Direct download link 
+    */
+		const result = await drive.files.get({
+			fileId: fileId,
+			fields: 'webViewLink, webContentLink',
+		});
+		console.log(result.data);
+	} catch (error) {
+		console.log(error.message);
+	}
+}
+
+// generatePublicUrl();
+
+module.exports = {
+	uploadFile,
 };
-
-module.exports = { ggg };
