@@ -415,6 +415,13 @@ const addReport = async (req, res) => {
   }
 };
 
+const expireDelete = async (pets) => {
+  const expire = pets.filter((pet) => pet.expire <= Date.now());
+  if (expire.length > 0) expire.map((pet) => deleteExpirePet(pet));
+};
+
+const deleteExpirePet = (pet) => {};
+
 module.exports = {
   getMascota,
   crearMascota,
