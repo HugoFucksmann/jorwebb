@@ -11,10 +11,7 @@ const {
 
 const router = Router();
 
-//router.put("/:tipo/:id", validarJWT, fileUploads);
-
 router.get("/:tipo/:nombre", retornaImagen);
-//router.get("/:mid", readBucket);
 
 router.put("/:tipo/:mid", validarJWT, driveUpload);
 
