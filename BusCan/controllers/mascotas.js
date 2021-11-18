@@ -196,7 +196,6 @@ const crearMascotaf = async (req, res) => {
 				msj: 'error al cargar imagen',
 				fileName,
 				extensionArchivo,
-				fileData,
 			});
 		}
 		const url = await generatePublicUrl(drive, result.id);
