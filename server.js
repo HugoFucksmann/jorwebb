@@ -3,6 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 const path = require("path");
 const fileUpload = require("express-fileupload");
+const { tester } = require("./helpers/sample");
 
 const app = express();
 app.use(cors());
@@ -12,6 +13,8 @@ app.use(express.static("public"));
 
 app.use("/buscan", require("./BusCan/root"));
 app.use("/jorweb", require("./joraWeb/root"));
+
+//tester();
 
 app.get("/*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"));
