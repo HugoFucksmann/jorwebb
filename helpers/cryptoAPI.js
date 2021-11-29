@@ -10,7 +10,7 @@ func = async () => {
 	let uniPrice = uni.data.market_data.current_price.usd;
 	console.log('manaPrice: ', manaPrice);
 	console.log('uniPrice: ', uniPrice);
-	if (manaPrice > 5.4 || manaPrice < 3.9) {
+	if (manaPrice > 5.2 || manaPrice < 3.9) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -26,7 +26,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice > 20.9 || uniPrice < 17.9) {
+	} else if (uniPrice > 20.2 || uniPrice < 17.9) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
