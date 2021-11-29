@@ -7,17 +7,23 @@ func = async () => {
 	let mana = await CoinGeckoClient.coins.fetch('decentraland');
 	let uni = await CoinGeckoClient.coins.fetch('uniswap');
 	let bitcoint = await CoinGeckoClient.coins.fetch('bitcoin');
-	let bitcointPrice =
+	let bitcointPorcentage =
 		bitcoint.data.market_data.price_change_percentage_24h;
+	let manaPorcentage =
+		mana.data.market_data.price_change_percentage_24h;
 	let manaPrice = mana.data.market_data.current_price.usd;
 	let uniPrice = uni.data.market_data.current_price.usd;
+	let uniPorcentage =
+		uni.data.market_data.price_change_percentage_24h;
+	console.log(uniPorcentage);
+	console.log(manaPorcentage);
 	//let data = await CoinGeckoClient.coins.all();
 	/* console.log('manaPrice: ', manaPrice);
 	console.log('uniPrice: ', uniPrice);
 	console.log('bitcointPrice: ', bitcointPrice); */
 	//console.log('listt ', data);
 
-	if (manaPrice > 5.2) {
+	if (manaPrice > 5.2 || manaPorcentage > 5.3) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -65,7 +71,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice > 20.2) {
+	} else if (uniPrice > 20.2 || uniPorcentage > 5.3) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -81,7 +87,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (bitcointPrice > 5.7) {
+	} else if (bitcointPorcentage > 5.4) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
