@@ -16,13 +16,13 @@ app.use('/buscan', require('./BusCan/root'));
 app.use('/jorweb', require('./joraWeb/root'));
 
 //tester();
-/* try {
+try {
 	setInterval(func, 30000);
 } catch (error) {
 	console.log(error);
 	alertaError();
-} */
-func();
+}
+
 app.get('/*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
