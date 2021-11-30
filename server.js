@@ -17,7 +17,7 @@ app.use('/jorweb', require('./joraWeb/root'));
 
 //tester();
 try {
-	setInterval(func, 30000);
+	setInterval(func, 40000);
 } catch (error) {
 	console.log(error);
 	alertaError();
