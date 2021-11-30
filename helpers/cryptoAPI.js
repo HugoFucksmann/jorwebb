@@ -41,7 +41,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (manaPrice < 4.7) {
+	} else if (manaPrice < 4.6) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
