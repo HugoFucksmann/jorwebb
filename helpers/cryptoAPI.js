@@ -41,7 +41,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (manaPrice < 4.6) {
+	} else if (manaPrice < 4.2) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -57,7 +57,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice < 20.2) {
+	} else if (uniPrice < 19.8) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
