@@ -73,7 +73,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice > 21 || uniPorcentage > 9.7) {
+	} else if (uniPrice > 22.1 || uniPorcentage > 9.7) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
