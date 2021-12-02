@@ -6,26 +6,11 @@ const CoinGeckoClient = new CoinGecko();
 func = async () => {
 	let mana = await CoinGeckoClient.coins.fetch('decentraland');
 	let uni = await CoinGeckoClient.coins.fetch('uniswap');
-	//let bitcoint = await CoinGeckoClient.coins.fetch('bitcoin');
-	/* let bitcointPorcentage =
-		bitcoint.data.market_data.price_change_percentage_24h; */
-	let manaPorcentage =
-		mana.data.market_data.price_change_percentage_24h;
+
 	let manaPrice = mana.data.market_data.current_price.usd;
 	let uniPrice = uni.data.market_data.current_price.usd;
-	let uniPorcentage =
-		uni.data.market_data.price_change_percentage_24h;
-	/* console.log(uniPorcentage);
-	console.log(manaPorcentage); */
-	//let data = await CoinGeckoClient.coins.all();
-	/* console.log('manaPrice: ', manaPrice);
-	console.log('uniPrice: ', uniPrice);
-	console.log('bitcointPrice: ', bitcointPrice); */
-	//console.log('listt ', data);
-	/* 	console.log(uniPorcentage, uniPrice);
-	console.log(manaPorcentage, manaPrice); */
 
-	if (manaPrice > 5.1 || manaPorcentage > 9.7) {
+	if (manaPrice > 5.1) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -41,7 +26,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (manaPrice < 4.2) {
+	} else if (manaPrice > 5.1) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -57,7 +42,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice < 19.8) {
+	} else if (uniPrice < 19.1) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -73,7 +58,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} else if (uniPrice > 22.1 || uniPorcentage > 9.7) {
+	} else if (uniPrice > 28.1) {
 		let messages = {
 			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
 			sound: 'default',
@@ -89,23 +74,7 @@ func = async () => {
 			},
 			body: JSON.stringify(messages),
 		});
-	} /* else if (bitcointPorcentage > 5.4) {
-		let messages = {
-			to: 'ExponentPushToken[JeLK8FG-aFry8L8mG1nzmN]',
-			sound: 'default',
-			title: 'sube bitcoint ++',
-			body: `precio de uni ${bitcointPrice}`,
-		};
-		await fetch('https://exp.host/--/api/v2/push/send', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'Accept-encoding': 'gzip, deflate',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(messages),
-		});
-	} */
+	}
 };
 
 alertaError = async () => {
