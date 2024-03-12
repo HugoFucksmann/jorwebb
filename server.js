@@ -16,7 +16,6 @@ app.use("/buscan", require("./BusCan/root"));
 app.use("/jorweb", require("./joraWeb/root"));
 app.use("/atrform", require("./atrForm/root"));
 
-//tester();
 try {
   setInterval(func, 40000);
 } catch (error) {
